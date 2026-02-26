@@ -150,6 +150,7 @@ h2 {
     font-size: 150%;
     color: #373634;
     transition: all 500ms;
+    z-index: 0;
 }
 
 .nav-bar * {
