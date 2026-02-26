@@ -1,0 +1,230 @@
+:root {
+    --red:      #d12121;
+    --blue:     #3d3da8;
+    --yellow:   #e9c602;
+    --grey:     #d3d4cd;
+    --black:    #373634;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+    padding-block: 2rem;
+    max-width: min(95%, 70rem);
+    margin-inline: auto;
+}
+
+.grid-item {
+    background-color: var(--grey);
+    color: var(--black);
+    font-family: Helvetica, sans-serif;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    min-height: 6rem;
+    transition: all 500ms;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (min-width: 800px) {
+
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+
+    .grid-row-span-2 {
+        grid-row: span 2;
+    }
+
+    .grid-col-span-3 {
+        grid-column: span 3;
+    }
+
+    .item-1 {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .header {
+        grid-column-start: 2;
+        grid-column: span 2;
+    }
+
+
+}
+
+.item-1 {
+    background-color: var(--red);
+    color: white;
+}
+
+.item-4 {
+    background-color: var(--blue);
+    color: white;
+}
+
+.item-5 {
+    background-color: var(--yellow);
+    color: white;
+}
+
+.item-7 {
+    position: relative;
+    background-color: var(--black);
+    color: white;
+}
+
+.author {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.2rem;
+    color: #d3d4cd;   
+}
+
+.item-1:hover, .item-1:focus {
+    border-radius: 0;
+    background-color: hsl(from var(--red) h calc(s * 1.5) l);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.01); 
+}
+
+.item-4:hover, .item-4:focus {
+    border-radius: 0;
+    background-color: hsl(from var(--blue) h calc(s * 2) l);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.01); 
+}
+
+.item-5:hover, .item-5:focus {
+    border-radius: 0;
+    background-color: hsl(from var(--yellow) h calc(s * 1.5) l);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.01); 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1rem;
+}
+
+.nav-bar a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+    font-size: 150%;
+    color: #373634;
+    transition: all 500ms;
+}
+
+.nav-bar * {
+    position: relative;
+}
+.nav-bar *:focus {
+    outline: none;
+}
+
+.nav-bar :nth-child(1)::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 500ms ease-in-out;
+}
+.nav-bar :nth-child(1):hover::before, .nav-bar :nth-child(1):focus::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 5px);
+    width: 100%;
+    background-color: var(--red);
+}
+.nav-bar :nth-child(1):hover, .nav-bar :nth-child(1):focus {
+    color: white;
+    z-index: 0;
+}
+
+
+.nav-bar :nth-child(2)::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 500ms ease-in-out;
+}
+.nav-bar :nth-child(2):hover::before, .nav-bar :nth-child(2):focus::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 5px);
+    width: 100%;
+    background-color: var(--blue);
+}
+.nav-bar :nth-child(2):hover, .nav-bar :nth-child(2):focus {
+    color: white;
+    z-index: 0;
+}
+
+.nav-bar :nth-child(3)::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 500ms ease-in-out;
+}
+.nav-bar :nth-child(3):hover::before, .nav-bar :nth-child(3):focus::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 5px);
+    width: 100%;
+    background-color: var(--yellow);
+}
+.nav-bar :nth-child(3):hover, .nav-bar :nth-child(3):focus {
+    color: white;
+    z-index: 0;
+}
